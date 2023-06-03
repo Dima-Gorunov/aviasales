@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #4A4A4A;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.loader {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+    margin:15px auto;
+    position: relative;
+    color: #6ebeff;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+    0% {
+        box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0;
+    }
+    33% {
+        box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0;
+    }
+    66% {
+        box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0;
+    }
+    100% {
+        box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
+    }
+}
+
+.all-content-container {
+    width: 960px;
+    max-width: 90vw;
+    margin: auto;
+    background-color: #F3F7FA;
+    min-height: 100vh;
+}
+
+.header-container {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.body-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    display: grid;
+    grid-template-columns: minmax(50px, 232px) minmax(100px, 502px);
+    grid-gap: 20px;
+    grid-template-areas: "checkbox-filter menu-filter" "checkbox-filter tickets-container" ". tickets-container";
+    padding-bottom: 50px;
+}
+
+.checkbox-filter-container {
+    grid-area: checkbox-filter;
+}
+
+.checkbox-filter {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.checkbox-title {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.checkbox-item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 13px;
+    padding-left: 20px;
+    line-height: 20px;
+}
+
+.checkbox-item:hover {
+    background: #F1FCFF;
+    cursor: pointer;
+}
+
+.checkbox-item input[type=checkbox] {
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9ABBCE;
+    border-radius: 2px;
+    outline: none;
+}
+
+.checkbox-item input[type=checkbox]:checked {
+    background-image: url("../assets/Shape.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 5px;
+    left: 5px;
+    border: 1px solid #2196F3;
+}
+
+.checkbox-item input[type=checkbox]::before {
+    content: "";
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    visibility: hidden;
+}
+
+.checkbox-item input[type=checkbox]:checked::before {
+    visibility: visible;
+}
+
+.menu-filter-container {
+    grid-area: menu-filter;
+}
+
+.menu-filter {
+    display: flex;
+}
+
+.menu-filter-items-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu-filter-items-container :first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #DFE5EC;
+}
+
+.menu-filter-items-container :last-child {
+    border-start-end-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #DFE5EC;
+}
+
+.menu-filter-items-container > button {
+    flex: 1;
+}
+
+.menu-filter-item {
+    background-color: #FFFFFF;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #DFE5EC;
+    border-top: 1px solid #DFE5EC;
+}
+
+.menu-filter-item:hover {
+    cursor: pointer;
+    background-color: #2196F3;
+}
+
+.menu-filter-item__active {
+    height: 50px;
+    color: #F3F7FA;
+    background-color: #2196F3;
+}
+
+.tickets-container {
+    grid-area: tickets-container;
+}
+
+.tickets {
+    width: 100%;
+}
+
+.ticket {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-info {
+    padding: 20px;
+}
+
+.ticket-info .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ticket-info .ticket-price {
+    color: #2196F3;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.ticket-info .airline-logo {
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+.ticket-info .flight-option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.ticket-info .flight-option .title {
+    color: #A0B0B9;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.ticket-info .flight-option .description {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.ticket-info .flight-option span {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.ticket-info .flight-option .time-info {
+    width: 141px;
+}
+
+.ticket-info .flight-option .flight-duration {
+    width: 141px;
+}
+
+.ticket-info .flight-option .transfers {
+    width: 141px;
+}
+
+.load_more {
+    width: 100%;
+    border: none;
+    background-color: #2196F3;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    height: 50px;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .all-content-container {
+        margin: 0;
+        width: 100vw;
+        max-width: 100vw;
+    }
+
+    .header-container {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .checkbox-filter-container {
+        margin-bottom: 10px;
+    }
+
+    .checkbox-title {
+        margin-bottom: 10px;
+    }
+
+    .checkbox-items {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 20px;
+    }
+
+    .checkbox-item {
+        width: 110px;
+        padding: 0;
+    }
+
+    .menu-filter-container {
+        margin-bottom: 10px;
+    }
+
+    .body {
+        width: 100%;
+        display: block;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
