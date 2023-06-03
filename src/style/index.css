@@ -15,25 +15,29 @@
     height: 12px;
     border-radius: 50%;
     display: block;
-    margin:15px auto;
+    margin: 15px auto;
     position: relative;
     color: #6ebeff;
     box-sizing: border-box;
     animation: animloader 1s linear infinite alternate;
 }
+.load_more:hover {
+    cursor: pointer;
+}
+
 
 @keyframes animloader {
     0% {
-        box-shadow: -38px -12px ,  -14px 0,  14px 0, 38px 0;
+        box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0;
     }
     33% {
-        box-shadow: -38px 0px, -14px -12px,  14px 0, 38px 0;
+        box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0;
     }
     66% {
-        box-shadow: -38px 0px , -14px 0, 14px -12px, 38px 0;
+        box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0;
     }
     100% {
-        box-shadow: -38px 0 , -14px 0, 14px 0 , 38px -12px;
+        box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
     }
 }
 
@@ -107,6 +111,10 @@
     border: 1px solid #9ABBCE;
     border-radius: 2px;
     outline: none;
+}
+
+.checkbox-item input:hover{
+    cursor: pointer;
 }
 
 .checkbox-item input[type=checkbox]:checked {
@@ -198,6 +206,14 @@
     padding: 20px;
 }
 
+.ticket-info:hover {
+    cursor: pointer;
+}
+
+.ticket-info:hover {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
 .ticket-info .ticket-header {
     display: flex;
     justify-content: space-between;
@@ -267,6 +283,7 @@
     border-radius: 5px;
     color: #FFFFFF;
 }
+
 
 @media (max-width: 768px) {
     .all-content-container {
