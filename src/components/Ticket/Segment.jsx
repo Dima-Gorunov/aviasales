@@ -10,10 +10,8 @@ const Segment = ({ Segment }) => {
   const difDate = new Date(0);
   difDate.setMinutes(Segment.duration);
 
-  const difHours = difDate.getHours();
-  const formattedMinutes = String(difDate.getMinutes()).padStart(2, '0');
-
-  const formattedTime = `${difHours}:${formattedMinutes}`;
+  const time = Segment.duration;
+  const formattedTime = Math.floor(time / 60) + 'ч ' + (time % 60) + 'м';
 
   return (
     <div className="flight-option">
