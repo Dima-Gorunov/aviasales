@@ -16,7 +16,7 @@ const TicketList = (props) => {
         ))}
       </div>
       <button className="load_more" onClick={() => loadMore()}>
-        ПОКАЗАТЬ ЕЩЕ N БИЛЕТОВ!
+        ПОКАЗАТЬ ЕЩЕ 5 БИЛЕТОВ!
       </button>
     </div>
   );
