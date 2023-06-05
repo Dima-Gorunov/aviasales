@@ -8,7 +8,9 @@ import { getLoadingComplete, getShowTickets } from './store/Selectors/TicketSele
 
 const AppContainer = (props) => {
   useEffect(() => {
-    props.getSearchIdThunk();
+    props.getSearchIdThunk().then(() => {
+      props.getTicketsThunk();
+    });
   }, []);
   return <App {...props} />;
 };

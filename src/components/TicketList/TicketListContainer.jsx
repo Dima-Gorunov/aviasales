@@ -15,15 +15,6 @@ import { getTicketsThunk, loadMoreTickets, setShowTicketsThunk } from '../../sto
 import TicketList from './TicketList';
 
 const TicketListContainer = (props) => {
-  const intervalId = useRef();
-  if (props.LoadingComplete) {
-    clearInterval(intervalId.current);
-  }
-  useEffect(() => {
-    intervalId.current = setInterval(async () => {
-      const response = await props.getTicketsThunk();
-    }, 500);
-  }, []);
   useEffect(() => {
     props.setShowTicketsThunk();
   }, [props.CheckboxFilters, props.Tickets, props.SimpleFilter]);

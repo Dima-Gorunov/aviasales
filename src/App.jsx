@@ -6,9 +6,6 @@ import logo from './assets/Logo.png';
 import MenuFilterContainer from './components/MenuFilter/MenuFilterContainer';
 
 const App = (props) => {
-  const showT = () => {
-    console.log(props.ShowTickets);
-  };
   return (
     <div className="all-content-container">
       <div className="header-container">

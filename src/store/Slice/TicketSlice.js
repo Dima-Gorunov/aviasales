@@ -88,8 +88,11 @@ export const getTicketsThunk = () => {
   return async (dispatch) => {
     try {
       const response = await AviasalesApi.getTickets();
+      const { tickets, stop } = response.data;
       dispatch(setTickets(response.data.tickets));
-      if (response.data.stop) {
+      if (!response.data.stop) {
+        dispatch(getTicketsThunk());
+      } else {
         console.log('complete');
         dispatch(setLoadingComplete(true));
       }
