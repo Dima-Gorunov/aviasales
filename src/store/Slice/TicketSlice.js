@@ -84,6 +84,7 @@ const TicketSlice = createSlice({
   },
 });
 
+let count = 0;
 export const getTicketsThunk = () => {
   return async (dispatch) => {
     try {
@@ -96,7 +97,12 @@ export const getTicketsThunk = () => {
         console.log('complete');
         dispatch(setLoadingComplete(true));
       }
+      count = 0;
     } catch (e) {
+      if (count < 3) {
+        count++;
+        dispatch(getTicketsThunk());
+      }
       console.log(e.response?.data?.message || e.message || 'error');
     }
   };
