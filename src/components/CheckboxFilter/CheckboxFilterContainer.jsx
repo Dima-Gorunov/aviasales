@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
 import { getCheckboxFilters } from '../../store/Selectors/TicketSelector';

@@ -1,23 +1,23 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
+
+import noImage from '../../assets/no_image.jpg';
 
 import Segment from './Segment';
 
-const Ticket = (props) => {
+const Ticket = ({ Ticket }) => {
+  const SegmentsList = Ticket.segments.map((item, index) => <Segment key={uuidv4()} Segment={item} />);
+
   return (
     <div className="ticket">
       <div className="ticket-info">
         <div className="ticket-header">
-          <span className="ticket-price">{props.Ticket.price} Р</span>
+          <span className="ticket-price">{Ticket.price} Р</span>
           <div className="airline-logo">
-            <img src={`https://pics.avs.io/99/36/${props.Ticket.carrier}.png`} alt="Лого компании" />
+            <img src={`https://pics.avs.io/99/36/${Ticket.carrier}.png` || noImage} alt={noImage} />
           </div>
         </div>
-        <div className="flight-options">
-          {props.Ticket.segments.map((item, index) => (
-            <Segment key={`seg${index}`} Segment={item} />
-          ))}
-        </div>
+        <div className="flight-options">{SegmentsList}</div>
       </div>
     </div>
   );

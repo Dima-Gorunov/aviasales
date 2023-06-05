@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
-import TicketListContainer from './components/TicketList/TicketListContainer';
-import CheckboxFilterContainer from './components/CheckboxFilter/CheckboxFilterContainer';
-import logo from './assets/Logo.png';
-import MenuFilterContainer from './components/MenuFilter/MenuFilterContainer';
+import TicketListContainer from '../components/TicketList/TicketListContainer';
+import CheckboxFilterContainer from '../components/CheckboxFilter/CheckboxFilterContainer';
+import logo from '../assets/Logo.png';
+import MenuFilterContainer from '../components/MenuFilter/MenuFilterContainer';
 
 const App = (props) => {
   return (

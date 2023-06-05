@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MenuFilter = (props) => {
   const setActiveMenuItem = (e) => {
     const key = e.currentTarget.value;

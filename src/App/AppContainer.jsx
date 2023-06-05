@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import './App.css';
 import { connect } from 'react-redux';
 
+import { getSearchIdThunk } from '../store/Slice/AuthSlice';
+import { getTicketsThunk } from '../store/Slice/TicketSlice';
+import { getLoadingComplete, getShowTickets } from '../store/Selectors/TicketSelector';
+
 import App from './App';
-import { getSearchIdThunk } from './store/Slice/AuthSlice';
-import { getTicketsThunk, setShowTicketsThunk } from './store/Slice/TicketSlice';
-import { getLoadingComplete, getShowTickets } from './store/Selectors/TicketSelector';
 
 const AppContainer = (props) => {
   useEffect(() => {

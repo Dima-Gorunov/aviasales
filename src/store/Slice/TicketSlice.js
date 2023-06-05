@@ -9,10 +9,10 @@ const TicketSlice = createSlice({
     ShowTickets: [],
     CheckboxFilters: [
       { key: 'all', text: 'Все', active: true },
-      { key: '0', text: 'Без пересадок', active: false },
-      { key: '1', text: '1 Пересадка', active: false },
-      { key: '2', text: '2 Пересадки', active: false },
-      { key: '3', text: '3 Пересадки', active: false },
+      { key: '0', text: 'Без пересадок', active: true },
+      { key: '1', text: '1 Пересадка', active: true },
+      { key: '2', text: '2 Пересадки', active: true },
+      { key: '3', text: '3 Пересадки', active: true },
     ],
     SimpleFilter: [
       { key: 'lowPrice', text: 'САМЫЙ ДЕШЕВЫЙ', active: true },
@@ -65,9 +65,22 @@ const TicketSlice = createSlice({
     },
     setActiveFilter(state, { payload }) {
       const { key, active } = payload;
-      const index = state.CheckboxFilters.findIndex((item) => item.key === key);
-      if (index !== -1) {
+      const allActive = () => {
+        for (let i = 1; i < state.CheckboxFilters.length; i++) {
+          if (!state.CheckboxFilters[i].active) {
+            return false;
+          }
+        }
+        return true;
+      };
+      if (key === 'all') {
+        for (let i = 0; i < state.CheckboxFilters.length; i++) {
+          state.CheckboxFilters[i].active = active;
+        }
+      } else {
+        const index = state.CheckboxFilters.findIndex((item) => item.key === key);
         state.CheckboxFilters[index].active = active;
+        state.CheckboxFilters[0].active = allActive();
       }
     },
     setSimpleFilter(state, { payload }) {

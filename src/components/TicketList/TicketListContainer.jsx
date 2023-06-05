@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import {
   getCheckboxFilters,
-  getFinalTickets,
   getLoadedCount,
   getLoadingComplete,
   getShowTickets,
